@@ -23,17 +23,18 @@ function App() {
             />
           </div>
         </div>
-        <p>
+        <span class="footer">
           This app was created by Elizabeth King and is{" "}
           <a
             href="https://github.com/elizabethkatk/react-weather-app"
             target="_blank"
             rel="noreferrer"
+            id="code-link"
           >
             open-sourced on GitHub
           </a>
           .
-        </p>
+        </span>
       </div>
     </div>
   );
