@@ -23,6 +23,17 @@ function App() {
             />
           </div>
         </div>
+        <p>
+          This app was created by Elizabeth King and is{" "}
+          <a
+            href="https://github.com/elizabethkatk/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-sourced on GitHub
+          </a>
+          .
+        </p>
       </div>
     </div>
   );
