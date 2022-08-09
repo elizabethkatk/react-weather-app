@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Header";
+import Search from "./Search";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <Search />
+            <Header
+              date="Tuesday, August 2"
+              time="2:31 PM"
+              city="Chicago"
+              temperature={87}
+              conditions="Cloudy"
+              feelsLike={90}
+              windSpeed={5}
+              humidity={51}
+              highTemp={90}
+              lowTmp={82}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
