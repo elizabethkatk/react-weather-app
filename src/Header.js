@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
+import Conversion from "./Conversion";
 
 export default function Header(props) {
   return (
@@ -24,10 +25,7 @@ export default function Header(props) {
             <CurrentDate date={props.data.date} />
           </h6>
           <h1>{props.data.city}</h1>
-          <h2>
-            <span className="temp"></span>
-            {props.data.temperature}°<span className="temp-mode">F</span>
-          </h2>
+          <Conversion fahrenheit={props.data.temperature} />
           <h3>
             <img
               src={props.data.icon}

@@ -96,6 +96,17 @@ a {
   font-weight: bold;
 }
 
+.current-unit {
+  text-decoration: none;
+  color: lightslategray;
+  font-weight: lighter;
+}
+
+.current-unit:hover {
+  color: slategray;
+  font-weight: bold;
+}
+
 .range {
   font-size: 12px;
   text-align: center;
