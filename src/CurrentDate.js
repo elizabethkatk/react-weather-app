@@ -45,7 +45,7 @@ export default function CurrentDate(props) {
       <span className="time">
         {hours}:{minutes}
       </span>
-      <span className="timezone">(GMT-5)</span>
+      <span className="timezone"> (GMT-5)</span>
     </div>
   );
 }
