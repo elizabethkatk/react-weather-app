@@ -22,9 +22,15 @@ export default function Search(props) {
     });
   }
 
+  function searchLocation() {
+    let apiKey = "e5563a39d3909663bfcb47fa3fa4fa5e";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
-    alert(city);
+    searchLocation();
   }
 
   function fetchCity(event) {
@@ -41,12 +47,12 @@ export default function Search(props) {
                 type="search"
                 className="location"
                 placeholder="Type a location"
+                onChange={fetchCity}
               />
               <input
                 type="submit"
                 value="Search"
                 className="search-button ms-1"
-                onChange={fetchCity}
               />
             </form>
           </div>
@@ -60,10 +66,7 @@ export default function Search(props) {
       </div>
     );
   } else {
-    let apiKey = "e5563a39d3909663bfcb47fa3fa4fa5e";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(displayWeather);
-
+    searchLocation();
     return "Fetching data...";
   }
 }
