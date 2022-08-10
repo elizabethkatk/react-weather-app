@@ -49,9 +49,9 @@ a {
   border-radius: 5px !important;
   transition: all 200ms ease-in;
   border: none;
-  padding: 5px !important;
+  padding: 5px 143px 5px 7px !important;
   font-size: 16px !important;
-  margin-left: 85px;
+  margin-left: 12px;
   margin-right: 4px;
 }
 
@@ -60,7 +60,7 @@ a {
   background-color: #212529;
   color: lightgray;
   border: none;
-  padding: 5px 10px !important;
+  padding: 5px 15px !important;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 200ms ease-in;
   font-size: 16px !important;
