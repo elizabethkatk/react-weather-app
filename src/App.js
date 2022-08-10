@@ -12,14 +12,7 @@ function App() {
             <Header
               date="Tuesday, August 2"
               time="2:31 PM"
-              city="Chicago"
-              temperature={87}
-              conditions="Cloudy"
-              feelsLike={90}
-              windSpeed={5}
-              humidity={51}
-              highTemp={90}
-              lowTmp={82}
+              defaultCity="Chicago"
             />
           </div>
         </div>
