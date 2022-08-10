@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import CurrentDate from {./CurrentDate};
+import CurrentDate from "./CurrentDate";
 
 export default function Header(props) {
   const [loaded, setLoaded] = useState(false);
