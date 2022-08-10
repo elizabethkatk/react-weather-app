@@ -40,28 +40,16 @@ export default function Search(props) {
   if (weather.loaded) {
     return (
       <div>
-        <div className="row">
-          <div className="col-8">
-            <form onSubmit={handleSubmit}>
-              <input
-                type="search"
-                className="location"
-                placeholder="Type a location"
-                onChange={fetchCity}
-              />
-              <input
-                type="submit"
-                value="Search"
-                className="search-button ms-1"
-              />
-            </form>
-          </div>
-          <div className="col-4">
-            <button type="button" className="btn btn-warning btn-sm current">
-              Current Location
-            </button>
-          </div>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            className="location"
+            placeholder="Type a location"
+            onChange={fetchCity}
+          />
+          <input type="submit" value="Search" className="search-button ms-1" />
+        </form>
+
         <Header data={weather} />
       </div>
     );
