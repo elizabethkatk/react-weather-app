@@ -52,7 +52,7 @@ export default function Search(props) {
           <input type="submit" value="Search" className="search-button ms-1" />
         </form>
         <Header data={weather} />
-        <Forecast coordinates={weather.coordinates} />;
+        <Forecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
