@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Header from "./Header";
+import Forecast from "./Forecast";
 
 export default function Search(props) {
-  const [weather, setWeather] = useState({ loaded: false });
+  const [weather, setWeather] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function displayWeather(response) {
     setWeather({
-      loaded: true,
+      ready: true,
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       conditions: response.data.weather[0].main,
@@ -18,12 +20,12 @@ export default function Search(props) {
       feelsLike: Math.round(response.data.main.feels_like),
       highTemp: Math.round(response.data.main.temp_max),
       lowTemp: Math.round(response.data.main.temp_min),
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
   function searchLocation() {
-    let apiKey = "e5563a39d3909663bfcb47fa3fa4fa5e";
+    let apiKey = "0387dd01a84f39d46546057afddb0a26";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -37,7 +39,7 @@ export default function Search(props) {
     setCity(event.target.value);
   }
 
-  if (weather.loaded) {
+  if (weather.ready) {
     return (
       <div>
         <form onSubmit={handleSubmit}>
@@ -49,8 +51,8 @@ export default function Search(props) {
           />
           <input type="submit" value="Search" className="search-button ms-1" />
         </form>
-
         <Header data={weather} />
+        <Forecast coordinates={weather.coordinates} />;
       </div>
     );
   } else {
