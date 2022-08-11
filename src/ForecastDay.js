@@ -25,23 +25,25 @@ export default function ForecastDay(props) {
     return days[day];
   }
 
+  let icon = `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
+
   return (
     <div className="row five-day">
       <div className="col-3 days">
-        <p>{day()}</p>
+        <p className="weekday">{day()}</p>
       </div>
       <div className="col-4 temps">
-        <p>
-          {maxTemp()} / {minTemp()} <i className="fa fa-solid fa fa-cloud"></i>
+        <p className="weekday">
+          {maxTemp()} / {minTemp()} <img src={icon} alt="" />
         </p>
       </div>
       <div className="col-2 dew-point">
-        <p>
+        <p className="weekday">
           <i className="fa-solid fa-droplet"></i> {props.data.humidity}%
         </p>
       </div>
       <div className="col-3 wind">
-        <p>
+        <p className="weekday">
           <i className="fa-solid fa-wind"></i> {windSpeed()}
         </p>
       </div>
